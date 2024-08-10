@@ -1,9 +1,10 @@
 FROM alpine:3.15.0 AS logobuilder
 RUN apk add imagemagick parallel
 WORKDIR /assets
-COPY trustwallet/blockchains/ethereum/assets /assets/1/
-COPY trustwallet/blockchains/polygon/assets /assets/137/
-COPY trustwallet/blockchains/smartchain/assets /assets/56/
+# COPY trustwallet/blockchains/ethereum/assets /assets/1/
+# COPY trustwallet/blockchains/polygon/assets /assets/137/
+# COPY trustwallet/blockchains/smartchain/assets /assets/56/
+COPY trustwallet/blockchains/pulsechain/assets /assets/369/
 RUN find . -name logo.png | parallel magick convert {} -filter Lanczos -resize 32x32 {}; exit 0
 
 FROM scratch AS fourbytesbuilder

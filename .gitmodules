@@ -4,7 +4,7 @@
 	ignore = dirty
 [submodule "trustwallet"]
 	path = trustwallet
-	url = https://github.com/trustwallet/assets.git
+	url = https://github.com/PLS369/assets.git
 	ignore = dirty
 [submodule "topic0"]
 	path = topic0

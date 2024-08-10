@@ -1,5 +1,13 @@
 # Otterscan Assets
 
+Modifications:
+Complete:
+1. Substituted modified Trustwallet repo - https://github.com/PLS369/assets
+2. Modified Dockerfile to generate Pulsechain assets
+3. Image generation bumped up to 40x40px
+Coming Soon:
+1. Substitute 4bytes and topic0 repos with Pulsechain-customised versions.
+
 ## Introduction
 
 This repo builds a Docker image containing all static assets used by Otterscan.
