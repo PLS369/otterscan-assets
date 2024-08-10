@@ -6,6 +6,7 @@ on:
       - "main"
     tags:
       - "*"
+  workflow_dispatch:
 
 env:
   IMAGE_NAME: ${{ github.repository }}
@@ -39,12 +40,12 @@ jobs:
           driver-opts: |
             image=moby/buildkit:master
 
-      - name: Docker Login
-        uses: docker/login-action@v3
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Docker Login
+      #   uses: docker/login-action@v3
+      #   with:
+      #     registry: ghcr.io
+      #     username: ${{ github.actor }}
+      #     password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Docker Login
         uses: docker/login-action@v3
@@ -57,7 +58,7 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: |
-            otterscan/otterscan-assets
+            pls369/otterscan-assets
             ghcr.io/${{ env.IMAGE_NAME }}
 
       - name: Build and push Docker images
